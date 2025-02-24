@@ -27,10 +27,3 @@ function ShowCase() {
 }
 
 export default ShowCase
-
-
-// NEXT STEPS :
-// 01. change the font family
-// 02. change nav btn when we hover it 
-// 03. add a border bottom under the span & Every span
-// 04. if free time rest , start on Services component
