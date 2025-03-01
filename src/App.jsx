@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import NavBar from './Components/NavBar';
-import ShowCase from './Components/ShowCase';https://github.com/Eyup-16/Samobile/blob/main/src/App.jsx
+import ShowCase from './Components/ShowCase';
 import Services from './Components/Services';
 function App() {
+
   return (
     <main>
      <NavBar/>
      <ShowCase/>
-     <Services/>
+    <Services/>
     </main>
   )
 }
+
 export default App
