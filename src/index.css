@@ -1,11 +1,12 @@
 @import "tailwindcss";
 :root{
     font-family: "Raleway", sans-serif
+    /* background-color: #cacbcd; */
 }
 
 .span {
     position: relative;
-    display: inline-block;
+    display:inline-block;
   }
   
   .span::after {
