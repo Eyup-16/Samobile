@@ -1,22 +1,48 @@
 import React from 'react'
-import { Wrench } from 'lucide-react';
+import ServiceCards from './ServiceCards'
+import { Wrench,KeyRound,DollarSign ,Cog   } from 'lucide-react';
 
-function Services({icon,header,desc,btn}) {
+function Services() {
+  const servicesObj = [
+    {
+      id:1,
+      Icon:<Wrench className='text-white h-8 w-8'/>,
+      Header:'Phone Repairs',
+      Description:'Fix screens, batteries, charging ports & more. Fast, reliable, and affordable.',
+      Button:'Learn More'
+    },
+    {
+      id:2,
+      Icon:<KeyRound className='text-white h-8 w-8'/>,
+      Header:'Unlocking & Diagnostics',
+      Description:'Unlock your phone & get a free diagnostic check. Quick and hassle-free.',
+      Button:'Learn More'
+    },
+    {
+      id:3,
+      Icon:<DollarSign className='text-white h-8 w-8'/>,
+      Header:'Buy, Sell & Trade-In',
+      Description:'Sell your old phone or trade it in for a new one. Get instant cash or credit.',
+      Button:'Learn More'
+    },
+    // {
+    //   id:4,
+    //   Icon:<Cog className='text-white h-8 w-8'/>,
+    //   Header:'Accessories & Customization',
+    //   Description:'Premium accessories & custom setups. Make your phone truly yours.',
+    //   Button:'Learn More'
+    // },
+  ]
+  const servicesCard =servicesObj.map((service)=> {
+   return <ServiceCards key={service.id} icon={service.Icon} header={service.Header} desc={service.Description} btn={service.Button} />
+  })
+  
   return (
-    <section className='relative py-12 px-4  '> {/* Dark background */}
-      <div className='flex flex-col items-center justify-center bg-[#2d3436] p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-[350px] w-full'>
-        <div className='mb-4 p-3 bg-[#6c5ce7] rounded-full'> {/* Purple accent */}
-          {icon}
-        </div>
-        
-        <h1 className='text-2xl font-bold text-white mb-2 text-center'>{header}</h1>
-        
-        <p className='text-sm text-gray-300 text-center mb-6 leading-relaxed'>{desc}</p>
-        
-        <button className='bg-[#6c5ce7] text-white px-8 py-3 rounded-lg font-medium 
-                          hover:bg-[#5a4ad6] transition-colors duration-200 
-                          transform hover:scale-105 text-sm'> {btn}</button>
-      </div>
+    <section className='bg-gray-600 relative p-8 text-center'>
+    <h1 className='text-4xl font-semibold text-[#CACBCD] text-center mb-8 py-2 border-b-2 inline-block'>Services</h1>
+      <div className="grid md:grid-cols-3 p-4  items-center justify-items-center">
+     {servicesCard}
+    </div>
     </section>
   )
 }
