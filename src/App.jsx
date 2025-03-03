@@ -2,6 +2,9 @@ import { useState } from 'react'
 import NavBar from './Components/NavBar';
 import ShowCase from './Components/ShowCase';
 import Services from './Components/Services';
+import HelpCenter from './Components/HelpCenter';
+import Contact from './Components/Contact';
+import About from './Components/About';
 function App() {
 
   return (
@@ -9,6 +12,9 @@ function App() {
      <NavBar/>
      <ShowCase/>
     <Services/>
+    <HelpCenter />
+    <Contact/>
+    <About/>
     </main>
   )
 }
