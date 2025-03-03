@@ -1,5 +1,5 @@
 import React from 'react'
-import ServiceCards from './ServiceCards'
+import {ServiceCards} from './Cards'
 import { Wrench,KeyRound,DollarSign ,Cog   } from 'lucide-react';
 
 function Services() {
@@ -26,7 +26,7 @@ function Services() {
       Button:'Learn More'
     },
     // {
-    //   id:4,
+    //   id:2,
     //   Icon:<Cog className='text-white h-8 w-8'/>,
     //   Header:'Accessories & Customization',
     //   Description:'Premium accessories & custom setups. Make your phone truly yours.',
