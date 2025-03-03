@@ -1,7 +1,65 @@
-import { Wrench } from "lucide-react"
-
+import { Gauge,Hourglass,ShieldCheck,BadgeDollarSign,TabletSmartphone,CalendarClock,MessageSquareMore ,CreditCard} from "lucide-react"
+import { HelpCards } from "./Cards"
 
 function HelpCenter() {
+
+
+    const QAObj = [
+        {
+            id:1,
+            icon:<Hourglass className="w-5" color="#fff" />,
+            question:'How long does a phone repair usually take?',
+            answer:"Most repairs are completed within 1-2 hours. For more complex issues, we'll provide an estimated timeframe during the initial diagnosis."
+        },
+        {
+            id:2,
+            icon:<ShieldCheck className="w-5" color="#fff" />,
+            question:'Do you offer a warranty on repairs?',
+            answer:"Yes, we provide a 90-day warranty on all repairs to ensure your device stays in perfect condition."
+        },
+        {
+            id:3,
+            icon:<BadgeDollarSign className="w-5" color="#fff" />,
+            question:'Can I sell a broken or damaged phone?',
+            answer:"Absolutely! We buy phones in all conditions. Just let us know the issue, and we'll give you a fair price."
+        },
+        {
+            id:4,
+            icon:<TabletSmartphone className="w-5" color="#fff" />,
+            question:'What brands do you repair?',
+            answer:"We repair all major brands, including Apple, Samsung, Google, and more. Check our Services section for a full list."
+        },
+        {
+            id:5,
+            icon:<CalendarClock className="w-5" color="#fff" />,
+            question:'Do I need an appointment for repairs?',
+            answer:'Walk-ins are welcome, but we recommend booking online to save time and guarantee a slot.'
+        },
+        {
+            id:6,
+            icon:<MessageSquareMore className="w-5" color="#fff" />,
+            question:'How do I get a quote for my phone repair?',
+            answer:'You can use our online quote tool or visit the store for a free, no-obligation assessment.'
+        },
+        {
+            id:7,
+            icon:<CreditCard className="w-5" color="#fff" />,
+            question:'What payment methods do you accept?',
+            answer:'We accept cash, credit/debit cards, and mobile payments like Apple Pay and Google Pay.'
+        },
+        {
+            id:8,
+            icon:<Gauge className="w-5" color="#fff" />,
+            question:'Do you offer same-day repairs?',
+            answer:'Yes, most repairs are completed the same day. Contact us to confirm availability for your specific issue.'
+        },
+    ]
+
+    const helpcards = QAObj.map((question)=>{
+      return  <HelpCards key={question.id} icon={question.icon} Q={question.question} A={question.answer} />
+    })
+
+
   return (
     <section className=' bg-[#212121] p-8'>
         {/* Header + description */}
@@ -13,28 +71,10 @@ function HelpCenter() {
         </div>
 
     <div className="grid grid-cols-2 gap-4"> {/* Container of FAQs */} 
-        <div className="qestion+ answer+ icon p-8"> {/* Container 01 of elements (icon,question,answer) flex is needed */}
-            <div className="icon border-2 border-[#e5e5e5] rounded-[6px] w-8"><Wrench className="w-5" color="#fff"/></div>
-            <h6>Is there a free trial available?</h6>
-            <p>Yes you can try us for 30 days. if you want, we'll provide you with
-                a free 30-min onboarding call to get you up & running.
-            </p>
-        </div>
-        <div className="qestion+ answer+ icon p-8"> {/* Container 02 of elements (icon,question,answer) flex is needed */}
-            <div className="icon border-2 border-[#e5e5e5] rounded-[6px] w-8"><Wrench className="w-5" color="#fff"/></div>
-            <h6 className="font-bold text-white text-[16px] mb-2 ">Is there a free trial available?</h6>
-            <p className="text-white text-[12px] w-[450px]">Yes you can try us for 30 days. if you want, we'll provide you with
-                a free 30-min onboarding call to get you up & running.
-            </p>
-        </div>
+           {helpcards} 
     </div>
     </section>
   )
 }
 
 export default HelpCenter
-
-// Next Step 
-// 01 Continue styling the FAQs
-// 02 after designing the fiv convert it into an array of objects then map over it 
-// 03. try t ofind a gud palce to the mapped array (e.g `ServiceCards.jsx`)
