@@ -12,31 +12,35 @@ function Contact() {
         </div>
 
     {/* Container */}
-    <div className='grid grid-cols-2 gap-4 max-w-[800px] justify-items-center m-auto text-white'>
+    <div className='grid grid-cols-2 gap-4 justify-items-center m-auto text-white p-8 mt-8'>
 
     {/* form */}
     <form className='form'>
     {/* name */}
-    <div className='name'>
+    <div className='grid grid-cols-2 gap-2 mb-[16px]'>
 
-      <div className='first name'>
-      <label>First Name</label>
-      <input type="text" placeholder='First Name' />
+      <div className='flex flex-col '>
+      <label htmlFor='firsName' className='mb-[10px] ml-[8px]'>First Name</label>
+      <input type="text" name='firsName' placeholder='First Name' 
+             className='border-[1px] border-white rounded-[7px] pl-4 py-1 w-[80%] '/>
       </div>
 
-      <div className='last name'>
-      <label>Last Name</label>
-      <input type="text" placeholder='Last Name' />
+      <div className='flex flex-col'>
+      <label htmlFor='lastName' className='mb-[10px] ml-[8px]'>Last Name</label>
+      <input type="text" placeholder='Last Name'
+             className='border-[1px] border-white rounded-[7px] pl-4 py-1 w-[80%]' />
       </div>
     </div>
 
-    <div className="email">
-    <label>Email</label>
-    <input type="email" placeholder='you@company.com' />
+    <div className="flex flex-col mb-10">
+    <label htmlFor='email' className='mb-[8px] ml-[8px]'>Email</label>
+    <input type="email" placeholder='you@company.com'
+           className='border-[1px] border-white rounded-[7px] pl-4 py-1 w-[80%]' />
     </div>
-    <div className="number">
-    <label>Phone Number</label>
-    <input type="number" placeholder='+1(555) 000-0000' />
+    <div className="flex flex-col mb-10">
+    <label htmlFor='phoneNumber' className='mb-[10px] ml-[8px]'>Phone Number</label>
+    <input type="number" placeholder='+1(555) 000-0000'
+           className='border-[1px] border-white rounded-[7px] pl-4 py-1 w-[80%]' />
     </div>
     
     <div className="message">
@@ -91,3 +95,8 @@ function Contact() {
 }
 
 export default Contact
+
+// Next Step:
+// 01. continue designing the contact page
+// 02. start by the form flex ...
+// 03. delete number adder in the input. 
