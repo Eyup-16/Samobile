@@ -27,3 +27,9 @@
     transform-origin: bottom left; /* The border will expand from left to right */
   }
   
+  @layer components{
+    .input{
+      @apply border-[1px] border-white rounded-[7px] px-4 py-1
+      focus:outline-none focus:border-gray-500 focus:ring-1 focus:ring-gray-500
+    }
+  }
