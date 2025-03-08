@@ -14,8 +14,8 @@ function App() {
      <ShowCase/>
     <Services/>
     <HelpCenter/>
-    <Contact/>
     <About/>
+    <Contact/>
     <Footer/>
     </main>
   )
