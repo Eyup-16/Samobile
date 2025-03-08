@@ -1,6 +1,6 @@
 import { Gauge,Hourglass,ShieldCheck,BadgeDollarSign,TabletSmartphone,CalendarClock,MessageSquareMore ,CreditCard} from "lucide-react"
 import { HelpCards } from "./Cards"
-
+import { Element } from 'react-scroll';
 function HelpCenter() {
 
 
@@ -62,6 +62,7 @@ function HelpCenter() {
 
   return (
     <section className=' bg-[#212121] p-8'>
+              <Element name='Help Center'></Element>
         {/* Header + description */}
         <div className="text-center">
 
@@ -70,7 +71,7 @@ function HelpCenter() {
         Quick Answers to questions you may have.</span>
         </div>
 
-    <div className="grid grid-cols-2 gap-4"> {/* Container of FAQs */} 
+    <div className="grid grid-cols-2 gap-4 p-8 mt-8"> {/* Container of FAQs */} 
            {helpcards} 
     </div>
     </section>
