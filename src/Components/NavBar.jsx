@@ -2,7 +2,7 @@
 import { User,ShoppingCart } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-
+import {Link} from 'react-scroll'
 function NavBar() {
     
     // State to manage the navbar's visibility
@@ -36,8 +36,8 @@ function NavBar() {
       // Array containing navigation items
       const navItems = [
         { id: 1, text: 'Home' },
-        { id: 2, text: 'Company' },
-        { id: 3, text: 'Resources' },
+        { id: 2, text: 'Services' },
+        { id: 3, text: 'Help Center' },
         { id: 4, text: 'About' },
         { id: 5, text: 'Contact' },
       ];
@@ -52,12 +52,10 @@ function NavBar() {
           {/* Desktop Navigation */}
           <ul className='hidden min-[896px]:flex'>
             {navItems.map(item => (
-              <li
-                key={item.id}
-                className='p-4 m-2 cursor-pointer span'
-              >
-                {item.text}
-              </li>
+              <Link to={item.text} smooth={true} duration={500}>
+              <li key={item.id} className='px-4 py-2 m-2 cursor-pointer span'>
+                {item.text} </li>
+                </Link>
             ))}
           </ul>
       
