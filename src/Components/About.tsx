@@ -11,7 +11,7 @@ function About() {
         See how we began & Who our team is.</span>
     </div>
 
-    <article className='p-16 flex justify-center gap-4  place-items-center text-white max-w-[200px]: '>
+    <article className='p-16 flex justify-center gap-4  place-items-center text-white max-w-[1200px]'>
       <img className='w-[450px] rounded-[10px] mr-8 box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;' src="/aa.jpg" alt="repairing" />
       <div className='flex flex-col max-w-[300px]'>
         <span className='text-[18px] font-semibold text-[#CACBCD]  cursor-pointer  mb-3'>About Us</span>
@@ -22,44 +22,48 @@ function About() {
                         cursor-pointer hover:bg-[#e8e8e8] transition-all duration-300 font-semibold w-[50%]'>Book a Session</button>
       </div>
     </article>
-    <article>
-      <div className='skills'>
-        <h1>Our Skills</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, illum!</p>
-        <div className='flex flex-col'>
-          <div>
-          <span>Building</span>
-          <progress className='block h-1 ' value={.75} />
+    <article className='p-16 flex justify-center gap-4  place-items-center text-white max-w-[1200px]'>
+      <div className='w-[50%]'>
+        <h1 className='text-2xl  text-[#CACBCD] font-[500] mb-3'>Our Skills</h1>
+        <p className='text-[14px] max-w-[70%] mb-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem exceptur
+          i modi earum quam totam fugit unde nobis eius explicabo.</p>
+        <div className='flex flex-col max-w-[65%]'>
+          <div className='mb-6 flex flex-col'>
+          <span className='text-[#e5e5e5] mb-2'>Building</span>
+          <progress className='block h-1 rounded-[6px] w-full' value={.75} />
           </div>
-          <div>
-          <span>Building</span>
-          <progress className='block' value={.92} />
+
+          <div  className='mb-6 flex flex-col'>
+          <span className='text-[#e5e5e5] mb-2'>Deploying</span>
+          <progress className='block h-1 rounded-[6px] w-full' value={.92} />
           </div>
-          <div>
-          <span>Building</span>
-          <progress className='block' value={.65} />
+
+          <div  className='mb-6 flex flex-col'>
+          <span className='text-[#e5e5e5] mb-2'>Publishing</span>
+          <progress className='block h-1 rounded-[6px] w-full text-amber-700' value={.65} />
           </div>
           
         </div>
       </div>
 
-      <div className="statistics">
-        <div>
-          <h1>1000+</h1>
-          <span>Phone Repaired</span>
+      <div className="grid grid-cols-2 gap-16">
+        <div className='flex flex-col text-center'>
+          <h1 className='text-5xl mb-2'>1000+</h1>
+          <span className='text-[14px]'>Phone Repaired</span>
         </div>
-        <div>
-          <h1>20+</h1>
-          <span>Years of experience</span>
+
+         <div className='flex flex-col text-center'>
+          <h1 className='text-5xl mb-2'>20+</h1>
+          <span className='text-[14px]'>Years of experience</span>
         </div>
-        <div>
-          <h1>300+</h1>
-          <span>Satisfied client</span>
+        <div className='flex flex-col text-center'> 
+          <h1 className='text-5xl mb-2'>300+</h1>
+          <span className='text-[14px]'>Satisfied client</span>
         </div>
-        <div>
-          <h1>68</h1>
-          <span>Certified Award</span>
-        </div>
+        <div className='flex flex-col text-center'>
+          <h1 className='text-5xl mb-2'>68</h1>
+          <span className='text-[14px]'>Certified Award</span>
+          </div>
       </div>
 
     </article>
