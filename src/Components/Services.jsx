@@ -6,32 +6,39 @@ function Services() {
   const servicesObj = [
     {
       id:1,
-      Icon:<Wrench className='text-white h-8 w-8'/>,
+      Icon:<Wrench className='text-black h-8 w-8'/>,
       Header:'Phone Repairs',
       Description:'Fix screens, batteries, charging ports & more. Fast, reliable, and affordable.',
       Button:'Learn More'
     },
     {
       id:2,
-      Icon:<KeyRound className='text-white h-8 w-8'/>,
+      Icon:<KeyRound className='text-black h-8 w-8'/>,
       Header:'Unlocking & Diagnostics',
       Description:'Unlock your phone & get a free diagnostic check. Quick and hassle-free.',
       Button:'Learn More'
     },
     {
       id:3,
-      Icon:<DollarSign className='text-white h-8 w-8'/>,
+      Icon:<DollarSign className='text-black h-8 w-8'/>,
       Header:'Buy, Sell & Trade-In',
       Description:'Sell your old phone or trade it in for a new one. Get instant cash or credit.',
       Button:'Learn More'
-    }
+    },
+    // {
+    //   id:2,
+    //   Icon:<Cog className='text-white h-8 w-8'/>,
+    //   Header:'Accessories & Customization',
+    //   Description:'Premium accessories & custom setups. Make your phone truly yours.',
+    //   Button:'Learn More'
+    // },
   ]
   const servicesCard =servicesObj.map((service)=> {
    return <ServiceCards key={service.id} icon={service.Icon} header={service.Header} desc={service.Description} btn={service.Button} />
   })
   
   return (
-    <section className='bg-gray-600 relative p-8 text-center'>
+    <section className='bg-[linear-gradient(to_bottom,_#222,_#333)] relative p-8 text-center'>
       <Element name='Services'></Element>
       <div className="text-center">
 
