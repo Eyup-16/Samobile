@@ -1,8 +1,20 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import { Element } from 'react-scroll';
 function About() {
+  const [email,setEmail] = useState('')
+  const clearInput = ()=> {
+   setEmail('')
+  
+  }
+  
+   const handleSubmit = (event: React.FormEvent) => {
+      event.preventDefault(); // Prevents the default form submission behavior
+      alert('Message sent ✅');
+      clearInput()
+    
+    };
   return (
-    <section className=' bg-[#212118] p-8'>
+    <section className=' bg-[linear-gradient(to_bottom,_#222,_#333)] p-8'>
       <Element name='About'></Element>
     {/* Header + description */}
     <div className="text-center">
@@ -67,7 +79,31 @@ function About() {
       </div>
 
     </article>
+    {/* Join US file */}
+    <aside className='flex justify-between items-center bg-[linear-gradient(to_right,_#111,_#222)] p-8 rounded-2xl'>
+     <div className='flex flex-col justify-center'>
+      <h1 className='text-2xl font-[500] text-[#eee] mb-2'>Join Our Weekly Newsletter</h1>
+      <p className='text-[#ddd]'>Stay up to date with the latest news, announcements, and articles.</p>
+     </div>
 
+     <form className='flex items-center border border-[#ccc] rounded-[10px] pl-3 pr-1 bg-white'>
+    <input
+      value={email}
+      onChange={(e)=>setEmail(e.target.value)}
+      type="email"
+      placeholder='Enter your email'
+      className='border-none rounded-[6px] focus:outline-none w-64'
+      required
+    />
+    <button
+      className='px-4 py-2 bg-[linear-gradient(to_right,_#222,_#333)] text-white text-center border-none rounded-[10px] 
+                cursor-pointer hover:bg-[linear-gradient(to_right,_#333,_#222)] transition-all duration-800 font-semibold'
+      onClick={handleSubmit}
+    >
+      Subscribe
+    </button>
+  </form>
+    </aside>
 </section>
   )
 }
