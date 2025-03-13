@@ -61,7 +61,7 @@ function HelpCenter() {
 
 
   return (
-    <section className=' bg-[#212121] p-8'>
+    <section className=' bg-[linear-gradient(to_bottom,_#222,_#333)] p-8 [box-shadow:0_4px_10px_rgba(0,_0,_0,_0.5)]'>
               <Element name='Help Center'></Element>
         {/* Header + description */}
         <div className="text-center">
