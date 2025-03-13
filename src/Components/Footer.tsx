@@ -76,7 +76,7 @@ function Footer() {
     })
 
   return (
-<footer className=' bg-[#212118] p-8 text-white'>
+<footer className=' bg-[linear-gradient(to_bottom,_#222,_#333)] p-8 text-white'>
    <div className='flex p-8 border-b-1'> {/* Container */}
 
     <div className='flex flex-col w-[30%]'> {/* img & descrption */} 
