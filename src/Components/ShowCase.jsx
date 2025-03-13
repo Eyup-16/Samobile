@@ -18,7 +18,7 @@ function ShowCase() {
       <p className='relative text-xl  text-gray-200 mb-3'> {/* Descriptive paragraph */}
         We specialize in fast, reliable phone repairs and offer top cash for your old devices. Whether you need a quick fix or want to upgrade, we've got you covered!
       </p>
-      <button className="relative bg-[#1B3A4B] text-white px-8 py-3 rounded-lg font-semibold cursor-pointer mt-3 hover:bg-[#264653] transition-colors duration-300 w-fit"> {/* Call-to-action button */}
+      <button className="relative bg-[#fff] text-black px-8 py-3 rounded-lg font-semibold cursor-pointer mt-3 hover:bg-[#e8e8e8] transition-colors duration-300 w-fit"> {/* Call-to-action button */}
         Get Started Now
       </button>
     </div>
