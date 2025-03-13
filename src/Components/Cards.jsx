@@ -4,12 +4,12 @@ import React from 'react'
       
     
             <div className='flex flex-col items-center justify-center bg-[#2d3436] p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-[350px] w-full mb-8'>
-              <div className='m-4 p-3 bg-[#f5f5f5] rounded-full'> {/* Purple accent */}
+              <div className='m-4 p-3 bg-[#f5f5f5] rounded-full'>
                 {icon}
               </div>
             
-              <h1 className='text-2xl font-bold text-white mb-2 text-center'>{header}</h1> 
-              <p className='text-sm text-gray-300 text-center mb-6 leading-relaxed'>{desc}</p>
+              <h1 className='mb-2 text-2xl font-bold text-center text-white'>{header}</h1> 
+              <p className='mb-6 text-sm leading-relaxed text-center text-gray-300'>{desc}</p>
               <button className='bg-[#fff] text-black px-8 py-3 rounded-lg font-medium 
                                 hover:bg-[#e8e8e8] transition-colors duration-300 
                                 transform hover:scale-105 text-sm'> {btn}
@@ -18,6 +18,8 @@ import React from 'react'
         )
       }
       
+
+
 
 function HelpCards({icon,Q,A}) {
   return(
@@ -30,7 +32,7 @@ function HelpCards({icon,Q,A}) {
     </div>
 </div>
   )
-export {
-ServiceCards,
-HelpCards
 }
+
+
+export {ServiceCards, HelpCards}
