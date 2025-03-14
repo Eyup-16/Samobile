@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import { PhoneCall,MapPin ,MessagesSquare,Mail,Instagram, Asterisk} from 'lucide-react'
 import { Element } from 'react-scroll';
+import { smList } from '../data';
 function Contact() {
   
   //  State Variables
@@ -18,7 +18,6 @@ function Contact() {
   const [email,setEmail] = useState('')
   const [phoneNumber,setPhoneNumber] = useState('')
   const [message,setMessage] = useState('')
-  const [error,setError] = useState('')
 
 // Functions 
 
@@ -117,18 +116,21 @@ function Contact() {
       value:message,
       onchange:(e)=>setMessage(e.target.value)
     },]
-  const commonClasses = 'w-[90%] input'
-  const twoFirstInputs = inputList.slice(0,2)
-  const remainingInputs = inputList.slice(2)
+    
+  const commonClasses = 'w-[90%] input max-md:w-[100%]' // Repeted classes 
+  // from 122 to 124 we devide the array into two SubArrays to generate `first & last names` under a specific div
+  const twoFirstInputs = inputList.slice(0,2) // first & lastname inputs
+  const remainingInputs = inputList.slice(2) // Rest of inputs
 
+    // What we gonna render (instead of hard coded HTML)
   function renderedInput(input:any) {
     return(
-      <div key={input.id} className="flex flex-col mb-10">
+      <div key={input.id} className="flex flex-col mb-10 max-md:mb-6">
     <label htmlFor={input.name} className='mb-[10px] ml-[8px]'>{input.label}</label>
-    
+    {/* check input's name if not equal to `message` it will generate an <input/> otherwise generate <textarea> */}
     {(input.name !== 'message')
-    ?(<input type={input.type} placeholder={input.placeholder} value={input.value} required={input.type !== 'number'}
-             className={`${commonClasses} [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none
+    ?(<input id={input.name} type={input.type} placeholder={input.placeholder} value={input.value} required={input.type !== 'number'}
+             className={`${input.name === 'firsName'|| input.name === 'lastName' ?'input w-[80%] max-md:w-[100%]':commonClasses} [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none
                  [&::-webkit-inner-spin-button]:appearance-none`} onChange={input.onchange}/>)
     :(
       <textarea name={input.name} id={input.name} placeholder={input.placeholder} value={input.value} 
@@ -141,91 +143,82 @@ function Contact() {
     )
   }
 
+// social media contact 
+const socialMedia = smList.map((item,indexItem)=>{
+  return(
+    <div className='mb-4 max-md:hidden' key={indexItem}> {/* input/textarea container */}
+        <h3 className='font-semibold text-[24px] mb-[10px]'>{item.title}</h3>
+        <p className='text-[14px] mb-[14px] text-gray-200'>{item.descr}</p>
+        {/* check if `item.links`(from smList array) is an Array it will map over it & genrate all of its contains
+         otherwise it will generate only one object (see on the smList array to understand more)    */}
+        {Array.isArray(item.links)
+        ?(
+          item.links.map((link,index)=>(
+            <div key={index} className='flex items-center gap-2 py-2'>
+            {link.icon}
+            <a  href={link.link} className='font-[600] border-b-1 text-[14px]'>{link.linkName}</a>
+            </div>
+          ))
+        ):
+        (
+          <div key={indexItem} className='flex items-center gap-2 py-2'>
+          {item.links.icon}
+          <a  href={item.links.link} className='font-[600] border-b-1 text-[14px]'>{item.links.linkName}</a>
+          </div>
+        )}
+        </div>
+  )
+})
+
+
+
   return (
     <section className=' bg-[linear-gradient(to_bottom,_#222,_#333)] p-8'>
-            <Element name='Contact'></Element>
-        {/* Header + description */}
-        <div className="text-center">
-
-    <h1 className='text-4xl font-semibold text-[#CACBCD] text-center mb-8 py-2 border-b-2 inline-block'>Contact Us</h1>
-    <span className="text-[18px] font-semibold text-[#CACBCD]  cursor-pointer block">
+            <Element name='Contact'></Element> {/* Element for smooth scrolling   */}
+        {/* Header + description  Container*/}
+    <div className="text-center">
+    <h1 className='text-4xl max-md:text-3xl font-semibold text-[#CACBCD] text-center mb-8 py-2 border-b-2 inline-block max-md:mb-6'>Contact Us</h1>
+    <span className="text-[18px] max-md:text-[16px] font-semibold text-[#CACBCD]  cursor-pointer block">
         Let us know how we can help.</span>
         </div>
 
-    {/* Container */}
-    <div className='grid grid-cols-2 gap-4 justify-items-center m-auto text-white p-8 mt-8 max-w-[1000px]'>
+    {/* Container of `form & aside` sections */}
+    <div className='grid grid-cols-2 max-md:grid-cols-1 max-md:p-0 gap-4 justify-items-center m-auto text-white p-8 mt-8 max-w-[1000px]'>
 
-    {/* form */}
-    <form onSubmit={handleSubmit} className='form'>
-    {/* name */}
-    <div className='grid grid-cols-2 gap-2 '>
+    {/* form of all input fields */}
+    <form onSubmit={handleSubmit}>
+    {/* first & last names Container */}
+    <div className='grid grid-cols-2 gap-2 max-md:grid-cols-1 max-md:justify-center max-md:items-center '>
       {twoFirstInputs.map((input)=>renderedInput(input))}
     </div>
-
+      {/* rest of inputs */}
       {remainingInputs.map((input)=>renderedInput(input))}
+      {/* Services container */}
     <div className="flex flex-col mb-10">
     <label htmlFor='services' className='mb-[10px] ml-[8px] block'>Services</label>
-    <div className='grid grid-cols-2 gap-2 w-[80%]'>
+    <div className='grid grid-cols-2 gap-2 w-[80%] max-md:flex max-md:flex-col'>
     {Object.entries(services).map(([service, isChecked]) => (
-          <div key={service}>
+          <div key={service} className='flex items-center gap-3 max-md:mb-2'>
             <input
               type="checkbox"
               name={service}
               checked={isChecked}
               onChange={handleCheckboxChange}
-              className='mr-2 cursor-pointer'
             /> 
             {service}
           </div>
         ))}
     </div>
-
     </div>
     <button className=' px-4 py-2 bg-white text-black text-center border-none rounded-[6px] 
-cursor-pointer hover:bg-[#e8e8e8] transition-all duration-300 w-[90%] font-semibold'>Send a Message</button>
+                        cursor-pointer hover:bg-[#c9c6c6] transition-all duration-500 w-[90%] 
+                        font-semibold max-md:w-full'>Send a Message</button>
     </form>
 
-    {/* social media & phone */}
-    <aside>
-      <div className='mb-4'>
-        <h3 className='font-semibold text-[24px] mb-[10px]'>Chat with us</h3>
-        <p className='text-[14px] mb-[14px] text-gray-200'>Speak to our friendly team via live chat</p>
-        <div className='flex items-center gap-2 py-2'>
-        <MessagesSquare size={'20px'} />
-        <a href="#" className='font-[600] border-b-1 text-[14px]'>start a live chat </a>
-        </div>
-        <div className='flex items-center gap-2 py-2'>
-        <Mail size={'20px'} />
-        <a href="mailto:samobile34@gmail.com" className='font-[600] border-b-1 text-[14px]'>Shoot us an Email </a>
-        </div>
-
-        <div className='flex items-center gap-2 py-2'>
-        <Instagram size={'20px'} />
-        <a href="https://www.instagram.com/samobile34" target='_blank' className='font-[600] border-b-1 text-[14px]'>Message us on Instagram</a>
-        </div>
-      </div>
-
-      <div className='mb-4'>
-      <h3 className='font-semibold text-[24px] mb-[10px]'>Call us</h3>
-      <p className='text-[14px] mb-[14px] text-gray-200'>Call our Team Sat-Thu from 9 am to 9 pm</p>
-      <div className='flex items-center gap-2 py-2'>
-        <PhoneCall size={'20px'} />
-        <a href="tel:+213541783626" className='font-[600] border-b-1 text-[14px]'>+213 (541)-78-3626</a>
-        </div>
-      </div>
-      <div className='mb-4'>
-      <h3 className='font-semibold text-[24px] mb-[10px]'>Visit us</h3>
-      <p className='text-[14px] mb-[14px] text-gray-200'>chat to us in person at our BBA HQ</p>
-      <div className='flex items-center gap-2 py-2'>
-       <MapPin size={'20px'} />
-      <a href="https://www.google.com/maps/place/Samobile/@36.0733942,4.752814,17z/data=!3m1!4b1!4m6!3m5!1s0x128cbd1ececcb1e9:0x43c4431db169a4da!8m2!3d36.07339!4d4.7574274!16s%2Fg%2F11rxydl9vg?entry=ttu&g_ep=EgoyMDI1MDMwMy4wIKXMDSoASAFQAw%3D%3D" target='_blank' className='font-[600] border-b-1 text-[14px]'>laGraf street, Bordj Bou Arreridj VIC 34 </a>
-        </div>
-      </div>
-    </aside>
-
+    {/* social media & phone contact */}
+    <aside>{socialMedia}</aside>
     </div>
     </section>
   )
 }
-
 export default Contact
