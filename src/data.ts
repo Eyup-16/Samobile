@@ -1,5 +1,7 @@
 import React from "react"
-import { PhoneCall,MapPin ,MessagesSquare,Mail,Instagram,Facebook,Github, Dribbble,Linkedin,Twitter} from 'lucide-react'
+import { PhoneCall,MapPin ,MessagesSquare,Mail,Instagram,Facebook,Github, Dribbble,Linkedin,Twitter
+, Gauge,Hourglass,ShieldCheck,BadgeDollarSign,TabletSmartphone,CalendarClock,MessageSquareMore ,CreditCard
+} from 'lucide-react'
 
 // 01. Social Media Array inside the Contact.TSX
 
@@ -100,3 +102,56 @@ export const socialMediaIcons =[
             URL:'https://dribbble.com'
         }
     ]
+
+// 04. Q&A Array of Objects inside the HelpCenter.TSX
+
+export const QAObj = [
+  {
+      id:1,
+      icon:React.createElement(Hourglass,{color:'#fff',className:''}), //<Hourglass className="w-5" color="#fff" />,
+      question:'How long does a phone repair usually take?',
+      answer:"Most repairs are completed within 1-2 hours. For more complex issues, we'll provide an estimated timeframe during the initial diagnosis."
+  },
+  {
+      id:2,
+      icon:React.createElement(ShieldCheck,{color:'#fff',className:'w-5'}),//<ShieldCheck className="w-5" color="#fff" />,
+      question:'Do you offer a warranty on repairs?',
+      answer:"Yes, we provide a 90-day warranty on all repairs to ensure your device stays in perfect condition."
+  },
+  {
+      id:3,
+      icon:React.createElement(BadgeDollarSign,{color:'#fff',className:'w-5'}),//<BadgeDollarSign className="w-5" color="#fff" />,
+      question:'Can I sell a broken or damaged phone?',
+      answer:"Absolutely! We buy phones in all conditions. Just let us know the issue, and we'll give you a fair price."
+  },
+  {
+      id:4,
+      icon:React.createElement(TabletSmartphone,{color:'#fff',className:'w-5'}),//<TabletSmartphone className="w-5" color="#fff" />,
+      question:'What brands do you repair?',
+      answer:"We repair all major brands, including Apple, Samsung, Google, and more. Check our Services section for a full list."
+  },
+  {
+      id:5,
+      icon:React.createElement(CalendarClock,{color:'#fff',className:'w-5'}),//<CalendarClock className="w-5" color="#fff" />,
+      question:'Do I need an appointment for repairs?',
+      answer:'Walk-ins are welcome, but we recommend booking online to save time and guarantee a slot.'
+  },
+  {
+      id:6,
+      icon:React.createElement(MessageSquareMore,{color:'#fff',className:'w-5'}),//<MessageSquareMore className="w-5" color="#fff" />,
+      question:'How do I get a quote for my phone repair?',
+      answer:'You can use our online quote tool or visit the store for a free, no-obligation assessment.'
+  },
+  {
+      id:7,
+      icon:React.createElement(CreditCard,{color:'#fff',className:'w-5'}),//<CreditCard className="w-5" color="#fff" />,
+      question:'What payment methods do you accept?',
+      answer:'We accept cash, credit/debit cards, and mobile payments like Apple Pay and Google Pay.'
+  },
+  {
+      id:8,
+      icon:React.createElement(Gauge,{color:'#fff',className:'w-5'}),//<Gauge className="w-5" color="#fff" />,
+      question:'Do you offer same-day repairs?',
+      answer:'Yes, most repairs are completed the same day. Contact us to confirm availability for your specific issue.'
+  },
+]
