@@ -183,7 +183,7 @@ const socialMedia = smList.map((item,indexItem)=>{
         </div>
 
     {/* Container of `form & aside` sections */}
-    <div className='grid grid-cols-2 max-md:grid-cols-1 max-md:p-0 gap-4 justify-items-center m-auto text-white p-8 mt-8 max-w-[1000px]'>
+    <div className='md:grid grid-cols-2 max-md:p-0 gap-4 justify-items-center m-auto text-white p-8 mt-8 max-w-[1000px]'>
 
     {/* form of all input fields */}
     <form onSubmit={handleSubmit}>
