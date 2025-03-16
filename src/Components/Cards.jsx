@@ -23,12 +23,12 @@ import React from 'react'
 
 function HelpCards({icon,Q,A}) {
   return(
-    <div className="flex items-center justify-center gap-4 py-4"> {/* Container 02 of elements (icon,question,answer) flex is needed */}
-    <div className="icon border-1 border-[#e5e5e5] rounded-[6px] p-[5px] ">{icon}</div>
+    <div className="flex justify-center gap-4 py-4 md:items-center max-md:items-start max-md:flex-col"> {/* Container 02 of elements (icon,question,answer) flex is needed */}
+    <div className="icon border-1 border-[#e5e5e5] rounded-[6px] p-[5px]  ">{icon}</div>
     
     <div className="flex flex-col"> {/* Container of Q & A To make flex */} 
-    <h6 className="font-bold text-white text-[16px] mb-2 ">{Q}</h6>
-    <p className="text-white text-[12px] w-[450px]">{A}</p>
+    <h6 className="font-bold text-white max-md:text-[15px] mb-2 ">{Q}</h6>
+    <p className="text-white text-[12px] md:w-[450px]">{A}</p>
     </div>
 </div>
   )
