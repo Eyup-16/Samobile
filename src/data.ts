@@ -103,7 +103,7 @@ export const socialMediaIcons =[
         }
     ]
 
-// 04. Q&A Array of Objects inside the HelpCenter.TSX
+// 04. Q&A Array of Objects inside the HelpCenter.JSX
 
 export const QAObj = [
   {
@@ -155,3 +155,39 @@ export const QAObj = [
       answer:'Yes, most repairs are completed the same day. Contact us to confirm availability for your specific issue.'
   },
 ]
+
+
+// 05. ProgressBar & Achivments Arrays of Objects inside the About.TSX
+
+ export const progressList = [
+      {
+        name:'Building',
+        value:.75
+      },
+      {
+        name:'Deploying',
+        value:.92
+      },
+      {
+        name:'Publishing',
+        value:.28
+      },
+    ]
+ export const achievmentsList=[
+      {
+        name: '1000+',
+        descr:'Phone Repaired'
+      },
+      {
+        name: '20+',
+        descr:'Years of experience'
+      },
+      {
+        name: '300+',
+        descr:'Satisfied client'
+      },
+      {
+        name: '68',
+        descr:'Certified Award'
+      },
+    ]
