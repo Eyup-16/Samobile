@@ -35,6 +35,8 @@
       focus:outline-none focus:border-gray-500 focus:ring-1 focus:ring-gray-500
     }
   }
+
+
   /* checkBox Styling */
 
   *,
@@ -51,10 +53,15 @@
   }
   
   input[type="checkbox"] {
+    /* Add if not using autoprefixer */
     -webkit-appearance: none;
+    /* Remove most all native input styles */
     appearance: none;
+    /* For iOS < 15 */
     background-color: #fff;
+    /* Not removed via appearance */
     margin: 0;
+  
     font: inherit;
     color: currentColor;
     width: 1.15em;
@@ -88,3 +95,18 @@
     outline: max(2px, 0.15em) solid currentColor;
     outline-offset: max(2px, 0.15em);
   }
+  
+  input[type="checkbox"]:disabled {
+    --form-control-color: var(--form-control-disabled);
+  
+    color: var(--form-control-disabled);
+    cursor: not-allowed;
+  }
+
+  /* Services Hide/Show last child depends on the size */
+    
+    @media (min-width: 1280px) {
+      .hide-last-xl > :last-child {
+        display: none;
+    }
+  } 
