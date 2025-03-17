@@ -1,7 +1,7 @@
 import React from "react"
 import { PhoneCall,MapPin ,MessagesSquare,Mail,Instagram,Facebook,Github, Dribbble,Linkedin,Twitter
-, Gauge,Hourglass,ShieldCheck,BadgeDollarSign,TabletSmartphone,CalendarClock,MessageSquareMore ,CreditCard
-} from 'lucide-react'
+, Gauge,Hourglass,ShieldCheck,BadgeDollarSign,TabletSmartphone,CalendarClock,MessageSquareMore ,CreditCard,
+Wrench,KeyRound,DollarSign ,Cog  } from 'lucide-react'
 
 // 01. Social Media Array inside the Contact.TSX
 
@@ -44,7 +44,7 @@ export const smList=[
   },
 ]
 
-// 02. Services Array inside the Footer.TSX
+// 02. Service Array inside the Footer.TSX
 
 export const serviceObj =[
         {
@@ -191,3 +191,36 @@ export const QAObj = [
         descr:'Certified Award'
       },
     ]
+
+// 06. Services Array of Objects inside Services.Tsx
+
+export const servicesObj = [
+  {
+    id:1,
+    Icon: React.createElement(Wrench,{className:'text-black h-8 w-8'}), //<Wrench className='w-8 h-8 text-black'/>,
+    Header:'Phone Repairs',
+    Description:'Fix screens, batteries, charging ports & more. Fast, reliable, and affordable.',
+    Button:'Learn More'
+  },
+  {
+    id:2,
+    Icon: React.createElement(KeyRound,{className:'text-black h-8 w-8'}), //<KeyRound className='w-8 h-8 text-black'/>,
+    Header:'Unlocking & Diagnostics',
+    Description:'Unlock your phone & get a free diagnostic check. Quick and hassle-free.',
+    Button:'Learn More'
+  },
+  {
+    id:3,
+    Icon: React.createElement(DollarSign,{className:'text-black h-8 w-8'}), //<DollarSign className='w-8 h-8 text-black'/>,
+    Header:'Buy, Sell & Trade-In',
+    Description:'Sell your old phone or trade it in for a new one. Get instant cash or credit.',
+    Button:'Learn More'
+  },
+  {
+    id:4,
+    Icon:React.createElement(Cog,{className:'text-black h-8 w-8'}), //<Cog className='w-8 h-8 text-white'/>,
+    Header:'Accessories & Customization',
+    Description:'Premium accessories & custom setups. Make your phone truly yours.',
+    Button:'Learn More'
+  },
+]
