@@ -18,9 +18,6 @@ import React from 'react'
         )
       }
       
-
-
-
 function HelpCards({icon,Q,A}) {
   return(
     <div className="flex justify-center gap-4 py-4 md:items-center max-md:items-start max-md:flex-col"> {/* Container 02 of elements (icon,question,answer) flex is needed */}
@@ -33,6 +30,5 @@ function HelpCards({icon,Q,A}) {
 </div>
   )
 }
-
 
 export {ServiceCards, HelpCards}
