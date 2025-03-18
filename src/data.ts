@@ -224,3 +224,13 @@ export const servicesObj = [
     Button:'Learn More'
   },
 ]
+
+ // 07. Array containing navigation items inside Navbar.Tsx
+
+export const navItems = [
+  { id: 1, text: 'Home' },
+  { id: 2, text: 'Services' },
+  { id: 3, text: 'Help Center' },
+  { id: 4, text: 'About' },
+  { id: 5, text: 'Contact' },
+];
