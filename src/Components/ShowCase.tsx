@@ -2,8 +2,8 @@ import React from 'react'
 import { Element } from 'react-scroll';
 function ShowCase() {
   return (
+      <Element name='Home'>
     <section className='relative flex items-center justify-center min-h-screen text-white'>
-      <Element name='Home'></Element>
   <div className="absolute inset-0 bg-[url(/repearing.jpg)] bg-cover bg-center before:absolute before:inset-0 before:backdrop-blur-md before:bg-black/50"></div>
   
   <div className="relative flex justify-center w-full max-w-screen-xl px-4"> {/* Container for alignment */}
@@ -33,6 +33,7 @@ function ShowCase() {
     </div>
   </div>
 </section>
+</Element>
   )
 }
 
