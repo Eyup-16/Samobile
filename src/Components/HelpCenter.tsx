@@ -1,33 +1,65 @@
 import React from "react";
-import { HelpCards } from "./Cards"
+import { HelpCards } from "./Cards";
 import { QAObj } from "../data";
 import { Element } from 'react-scroll';
+import { motion } from 'framer-motion';
+
 function HelpCenter() {
+    const helpcards = QAObj.map((question) => {
+        return <HelpCards key={question.id} icon={question.icon} Q={question.question} A={question.answer} />;
+    });
 
+    return (
+        <section className='bg-gradient-to-b from-[#222] via-[#2a2a2a] to-[#333] p-12 relative overflow-hidden'>
+            <Element name='Help Center' />
+            
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-center max-w-4xl mx-auto"
+            >
+                <motion.h1 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className='text-4xl max-md:text-3xl font-bold text-white text-center mb-4'
+                >
+                    Help Center
+                </motion.h1>
+                
+                <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100px" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-8"
+                />
+                
+                <motion.span
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    className="text-[18px] font-medium text-gray-300 block"
+                >
+                    Quick Answers to questions you may have.
+                </motion.span>
+            </motion.div>
 
-    
-
-    const helpcards = QAObj.map((question)=>{
-      return  <HelpCards key={question.id} icon={question.icon} Q={question.question} A={question.answer} />
-    })
-
-
-  return (
-    <section className=' bg-[linear-gradient(to_bottom,_#222,_#333)] p-8 [box-shadow:0_4px_10px_rgba(0,_0,_0,_0.5)]'>
-              <Element name='Help Center'></Element>
-        {/* Header + description */}
-        <div className="text-center">
-
-    <h1 className='text-4xl max-md:text-3xl font-semibold text-[#CACBCD] text-center mb-8 py-2 border-b-2 inline-block'>Help Center</h1>
-    <span className="md:text-[18px] font-semibold text-[#CACBCD]  cursor-pointer block">
-        Quick Answers to questions you may have.</span>
-        </div>
-
-    <div className="grid gap-4 mt-8 md:p-8 md:grid-cols-2 "> {/* Container of FAQs */} 
-           {helpcards} 
-    </div>
-    </section>
-  )
+            <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="grid gap-6 mt-12 md:p-8 md:grid-cols-2 max-w-7xl mx-auto"
+            >
+                {helpcards}
+            </motion.div>
+        </section>
+    );
 }
 
-export default HelpCenter
+export default HelpCenter;
